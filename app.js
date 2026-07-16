@@ -9,10 +9,25 @@
     {
       id: 'park-chaeyoung', sort: 1, active: true, teacher: '박채영T',
       title: '고1 첫 시험 미리 보기', target: '중3(예비고1)',
-      schedule: '8/5 13:00–14:30 · 8/12 13:00–14:30', price: '무료', status: '신청가능',
+      schedule: '8/5 13:00–14:30 · 8/12 20:00–21:30', price: '무료', status: '신청가능',
       accent: '#8b341f', posterUrl: 'assets/posters/park-chaeyoung.webp',
       sourceFormUrl: 'https://forms.gle/YrHtaTyxc9ZoznDGA',
-      description: '하남·미강·풍산·미사고 기출을 분석하며 고1 시험을 미리 경험하는 고등 맛보기 특강입니다.', options: []
+      description: '하남·미강·풍산·미사고 기출을 분석하며 고1 시험을 미리 경험하는 고등 맛보기 특강입니다.',
+      sessionMode: 'multi',
+      sessions: [
+        { key: 'r1', label: '1회차', when: '8월 5일(수) 오후 1:00~2:30', content: '어법 시험 분석' },
+        { key: 'r2', label: '2회차', when: '8월 12일(수) 오후 8:00~9:30', content: '독해 시험 분석' }
+      ],
+      options: [],
+      detail: {
+        title: '박채영T 고등 맛보기 특강',
+        note: '1회차와 2회차는 상이한 내용으로, 두 회차 모두 참여 권장',
+        scheduleLines: ['1회차 : 8월 5일(수) 오후 1:00~2:30', '2회차 : 8월 12일(수) 오후 8:00~9:30'],
+        contentLines: ['1회차 : 어법 시험 분석', '2회차 : 독해 시험 분석'],
+        target: '하남고·미강고·풍산고·미사고 진학 예정인 중3 (비재원생도 가능)',
+        location: '목동유쌤영어학원 (세부 장소 추후 공지)',
+        teacherName: '박채영 선생님'
+      }
     },
     {
       id: 'kim-jiyeon', sort: 2, active: true, teacher: '김지연T',
@@ -21,7 +36,23 @@
       accent: '#6d481c', posterUrl: 'assets/posters/kim-jiyeon.webp',
       sourceFormUrl: 'https://forms.gle/ZpM8BF1fLcrHm6GX6',
       description: '개념은 알지만 문제에서 흔들리는 학생을 위해 고등 모의고사 어법의 출제 원리와 풀이 기준을 정리합니다.',
-      options: ['8/7 14:00–15:30', '8/7 20:00–21:30']
+      sessionMode: 'choose-one',
+      sessions: [],
+      options: ['8월 7일(금) 오후반 2:00~3:30', '8월 7일(금) 저녁반 8:00~9:30'],
+      detail: {
+        title: '김지연T 고등 어법 특강',
+        note: '오후반, 저녁반은 동일한 내용으로, 한 타임만 선택',
+        scheduleLines: ['8월 7일(금) 오후반 2:00~3:30', '8월 7일(금) 저녁반 8:00~9:30'],
+        contentLines: [
+          '매번 헷갈리는 어법 유형 집중 훈련',
+          '자주 출제되는 어법 포인트 정리',
+          '고등 모의고사 기출 유형 연습문제 풀이',
+          '오답이 많은 문항의 핵심 근거 분석'
+        ],
+        target: '중2, 중3 (비재원생도 가능)',
+        location: '목동유쌤영어학원 (세부 장소 추후 공지)',
+        teacherName: '김지연 선생님'
+      }
     },
     {
       id: 'sun-jaehyun', sort: 3, active: true, teacher: '선재현T',
@@ -29,7 +60,25 @@
       schedule: '8/3 20:00–21:30 · 8/10 20:00–21:30', price: '무료', status: '신청가능',
       accent: '#3b3aa3', posterUrl: 'assets/posters/sun-jaehyun.webp',
       sourceFormUrl: 'https://forms.gle/xk5WHGXeRJHN1HDA8',
-      description: '문장이 길어질수록 막히는 학생을 위해 문장 구조를 끊어 보고 정확히 해석하는 힘을 기릅니다.', options: []
+      description: '문장이 길어질수록 막히는 학생을 위해 문장 구조를 끊어 보고 정확히 해석하는 힘을 기릅니다.',
+      sessionMode: 'multi',
+      sessions: [
+        { key: 'r1', label: '1회차', when: '8월 3일(월) 오후 8:00~9:30', content: '관계사 구문 끊기, 문장의 생김새, 실제 예문 적용' },
+        { key: 'r2', label: '2회차', when: '8월 10일(월) 오후 8:00~9:30', content: '분사 & to부정사 구문 끊기, 문장의 생김새, 실제 예문 적용' }
+      ],
+      options: [],
+      detail: {
+        title: '선재현T 중2 구문 특강',
+        note: '1회차와 2회차는 상이한 내용으로, 두 회차 모두 참여 권장',
+        scheduleLines: ['1회차 : 8월 3일(월) 오후 8:00~9:30', '2회차 : 8월 10일(월) 오후 8:00~9:30'],
+        contentLines: [
+          '1회차 : 관계사 구문 끊기, 문장의 생김새, 실제 예문 적용',
+          '2회차 : 분사 & to부정사 구문 끊기, 문장의 생김새, 실제 예문 적용'
+        ],
+        target: '중2 (비재원생도 가능)',
+        location: '목동유쌤영어학원 (세부 장소 추후 공지)',
+        teacherName: '선재현 선생님'
+      }
     },
     {
       id: 'lee-seoyoung', sort: 4, active: true, teacher: '이서영T',
@@ -37,7 +86,23 @@
       schedule: '8/5 20:00–21:30', price: '무료', status: '신청가능',
       accent: '#06625f', posterUrl: 'assets/posters/lee-seoyoung.webp',
       sourceFormUrl: 'https://forms.gle/aSSAyu2JmADHRJx56',
-      description: '모든 문법의 출발점인 품사를 정확히 구분하고 문장 안에서 기능을 읽어 내는 생기초 문법 특강입니다.', options: []
+      description: '모든 문법의 출발점인 품사를 정확히 구분하고 문장 안에서 기능을 읽어 내는 생기초 문법 특강입니다.',
+      sessionMode: 'single',
+      sessions: [],
+      options: [],
+      detail: {
+        title: '이서영T 쌩기초 문법 특강',
+        note: '',
+        scheduleLines: ['8월 5일(수) 오후 8:00~9:30'],
+        contentLines: [
+          '8품사 개념과 문장 구성 성분(주어·동사·목적어·보어) 개념 잡기',
+          '배운 개념을 적용해 문장의 구조를 직접 분석하기',
+          '쉬운 문장부터 어려운 문장까지, 단계별 구조 파악 연습'
+        ],
+        target: '초6~중2 기초 학생 (비재원생도 가능)',
+        location: '목동유쌤영어학원 (세부 장소 추후 공지)',
+        teacherName: '이서영 선생님'
+      }
     },
     {
       id: 'hong-kyungji', sort: 5, active: true, teacher: '홍경지T',
@@ -45,7 +110,25 @@
       schedule: '7/24 18:00–19:30 · 8/7 18:00–19:30', price: '무료', status: '신청가능',
       accent: '#5a205d', posterUrl: 'assets/posters/hong-kyungji.webp',
       sourceFormUrl: 'https://forms.gle/ePSG5yBjnFo3xAZAA',
-      description: '단어를 무작정 외우는 대신 철자와 구조를 읽어 처음 보는 어휘도 스스로 해독하는 힘을 기릅니다.', options: []
+      description: '단어를 무작정 외우는 대신 철자와 구조를 읽어 처음 보는 어휘도 스스로 해독하는 힘을 기릅니다.',
+      sessionMode: 'multi',
+      sessions: [
+        { key: 'r1', label: '1회차', when: '7월 24일(금) 오후 6:00~7:30', content: '발음 기호 정복 + 접두사·어근·접미사 맛보기' },
+        { key: 'r2', label: '2회차', when: '8월 7일(월) 오후 6:00~7:30', content: '발음 기호 복습 + 필수 어근 학습 + 단어 해부공식 연습' }
+      ],
+      options: [],
+      detail: {
+        title: '홍경지T 중등 어휘 특강',
+        note: '1회차와 2회차는 이어지는 내용으로, 두 회차 모두 참여 권장',
+        scheduleLines: ['1회차 : 7월 24일(금) 오후 6:00~7:30', '2회차 : 8월 7일(월) 오후 6:00~7:30'],
+        contentLines: [
+          '1회차 : 발음 기호 정복 + 접두사·어근·접미사 맛보기',
+          '2회차 : 발음 기호 복습 + 필수 어근 학습 + 단어 해부공식 연습'
+        ],
+        target: '중1, 중2, 중3 (비재원생도 가능)',
+        location: '목동유쌤영어학원 (세부 장소 추후 공지)',
+        teacherName: '홍경지 선생님'
+      }
     },
     {
       id: 'bae-seunghee', sort: 6, active: true, teacher: '배승희T',
@@ -53,7 +136,25 @@
       schedule: '8/4 13:30–15:00 · 8/6 13:30–15:00', price: '무료', status: '신청가능',
       accent: '#8b1d4b', posterUrl: 'assets/posters/bae-seunghee.webp',
       sourceFormUrl: 'https://forms.gle/v9EDdoBHyJQ6vm7bA',
-      description: '심화·상위 과정에 필요한 핵심 문법 두 영역을 먼저 완성해 중등 영어의 기반을 단단히 잡습니다.', options: []
+      description: '심화·상위 과정에 필요한 핵심 문법 두 영역을 먼저 완성해 중등 영어의 기반을 단단히 잡습니다.',
+      sessionMode: 'multi',
+      sessions: [
+        { key: 'r1', label: '1회차', when: '8월 4일(화) 오후 1:30~3:00', content: '관계대명사 원리, 해석 방법, 실제 예문 연습' },
+        { key: 'r2', label: '2회차', when: '8월 6일(목) 오후 1:30~3:00', content: '완료시제 개념, 비교, 구분 연습' }
+      ],
+      options: [],
+      detail: {
+        title: '배승희T 중등 핵심 어휘 특강',
+        note: '1회차와 2회차는 상이한 내용으로, 두 회차 모두 참여 권장',
+        scheduleLines: ['1회차 : 8월 4일(화) 오후 1:30~3:00', '2회차 : 8월 6일(목) 오후 1:30~3:00'],
+        contentLines: [
+          '1회차 : 관계대명사 원리, 해석 방법, 실제 예문 연습',
+          '2회차 : 완료시제 개념, 비교, 구분 연습'
+        ],
+        target: '초6 (비재원생도 가능)',
+        location: '목동유쌤영어학원 (세부 장소 추후 공지)',
+        teacherName: '배승희 선생님'
+      }
     },
     {
       id: 'lee-seunghee', sort: 7, active: true, teacher: '이승희T',
@@ -61,7 +162,24 @@
       schedule: '7/22 17:00–18:30', price: '무료', status: '신청가능',
       accent: '#0a5478', posterUrl: 'assets/posters/lee-seunghee.webp',
       sourceFormUrl: 'https://forms.gle/pXHrSNVktU5fA4Zn7',
-      description: '수식어가 길어질 때 해석이 흐려지는 학생을 위해 문장의 중심인 주어와 동사를 빠르게 찾는 법을 익힙니다.', options: []
+      description: '수식어가 길어질 때 해석이 흐려지는 학생을 위해 문장의 중심인 주어와 동사를 빠르게 찾는 법을 익힙니다.',
+      sessionMode: 'single',
+      sessions: [],
+      options: [],
+      detail: {
+        title: '이승희T 주어 동사 찾기 특강',
+        note: '',
+        scheduleLines: ['7월 22일(수) 오후 5:00~6:30'],
+        contentLines: [
+          '문장의 2대 핵심 요소 이해',
+          '길어지는 주어 정복',
+          '주어-동사 수 일치 연습',
+          '문장 끊어 읽기 적용'
+        ],
+        target: '중1, 중2 기본 학생 (비재원생도 가능)',
+        location: '목동유쌤영어학원 (세부 장소 추후 공지)',
+        teacherName: '이승희 선생님'
+      }
     }
   ];
 
@@ -93,6 +211,7 @@
     posterModal: $('#poster-modal'),
     posterTitle: $('#poster-modal-title'),
     posterImage: $('#poster-modal-image'),
+    posterDetail: $('#poster-detail'),
     posterSource: $('#poster-source-link'),
     posterSelect: $('#poster-select-button'),
     applyModal: $('#apply-modal'),
@@ -140,9 +259,15 @@
   function normalizeRemoteCourse(remote, index) {
     const fallback = DEFAULT_COURSES.find(item => item.id === remote.id) || DEFAULT_COURSES[index] || {};
     const optionValue = remote.options ?? remote.optionList ?? remote.detailOptions ?? [];
-    const options = Array.isArray(optionValue)
+    const remoteOptions = Array.isArray(optionValue)
       ? optionValue.filter(Boolean).map(String)
       : String(optionValue || '').split('|').map(item => item.trim()).filter(Boolean);
+
+    // 상세 안내(일시·내용·대상·장소·강사)와 회차 선택 방식은 기본값에서 유지합니다.
+    const sessions = Array.isArray(fallback.sessions) ? fallback.sessions.map(item => ({ ...item })) : [];
+    const sessionMode = fallback.sessionMode || (remoteOptions.length ? 'choose-one' : 'single');
+    const options = remoteOptions.length ? remoteOptions : (Array.isArray(fallback.options) ? fallback.options.slice() : []);
+    const detail = fallback.detail ? { ...fallback.detail } : null;
 
     return {
       id: String(remote.id || fallback.id || `course-${index + 1}`),
@@ -159,7 +284,10 @@
       posterUrl: String(remote.posterUrl || fallback.posterUrl || ''),
       sourceFormUrl: String(remote.sourceFormUrl || fallback.sourceFormUrl || ''),
       description: String(remote.description || fallback.description || ''),
-      options
+      sessionMode,
+      sessions,
+      options,
+      detail
     };
   }
 
@@ -235,7 +363,7 @@
     state.pendingRequestId = '';
     state.pendingReceipt = '';
     if (shouldSelect) {
-      if (!state.selected.has(id)) state.selected.set(id, { detail: '' });
+      if (!state.selected.has(id)) state.selected.set(id, { detail: '', sessions: [] });
       showToast(`${course.teacher} 특강을 신청 목록에 담았습니다.`);
     } else {
       state.selected.delete(id);
@@ -249,7 +377,7 @@
     try {
       const payload = {
         savedAt: Date.now(),
-        items: Array.from(state.selected.entries()).map(([id, value]) => ({ id, detail: value.detail || '' }))
+        items: Array.from(state.selected.entries()).map(([id, value]) => ({ id, detail: value.detail || '', sessions: Array.isArray(value.sessions) ? value.sessions : [] }))
       };
       localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
     } catch (_) { /* storage unavailable */ }
@@ -262,7 +390,7 @@
       const saved = JSON.parse(raw);
       if (!saved || Date.now() - Number(saved.savedAt || 0) > 24 * 60 * 60 * 1000) return;
       (saved.items || []).forEach(item => {
-        if (getCourse(item.id)) state.selected.set(item.id, { detail: String(item.detail || '') });
+        if (getCourse(item.id)) state.selected.set(item.id, { detail: String(item.detail || ''), sessions: Array.isArray(item.sessions) ? item.sessions.map(String) : [] });
       });
     } catch (_) { /* ignore malformed storage */ }
   }
@@ -275,11 +403,37 @@
     els.posterTitle.textContent = `${course.teacher} 특강 포스터`;
     els.posterImage.src = course.posterUrl;
     els.posterImage.alt = `${course.teacher} 2026 여름방학 특강 포스터`;
+    renderPosterDetail(course);
     els.posterSource.href = course.sourceFormUrl || '#';
     els.posterSource.hidden = true;
     updatePosterSelectButton();
     openModal(els.posterModal);
     setTimeout(() => $('[data-close-poster]', els.posterModal)?.focus(), 40);
+  }
+
+  function renderPosterDetail(course) {
+    if (!els.posterDetail) return;
+    const detail = course.detail;
+    if (!detail) { els.posterDetail.innerHTML = ''; els.posterDetail.hidden = true; return; }
+    els.posterDetail.hidden = false;
+
+    const listBlock = (lines) => Array.isArray(lines) && lines.length
+      ? `<ul class="poster-detail-lines">${lines.map(line => `<li>${escapeHtml(line)}</li>`).join('')}</ul>`
+      : '';
+    const rows = [];
+    rows.push(`<div class="poster-detail-row"><dt>일시</dt><dd>${listBlock(detail.scheduleLines)}</dd></div>`);
+    const contentValue = `${detail.note ? `<p class="poster-detail-note">${escapeHtml(detail.note)}</p>` : ''}${listBlock(detail.contentLines)}`;
+    rows.push(`<div class="poster-detail-row"><dt>내용</dt><dd>${contentValue}</dd></div>`);
+    if (detail.target) rows.push(`<div class="poster-detail-row"><dt>대상</dt><dd>${escapeHtml(detail.target)}</dd></div>`);
+    if (detail.location) rows.push(`<div class="poster-detail-row"><dt>장소</dt><dd>${escapeHtml(detail.location)}</dd></div>`);
+    if (detail.teacherName) rows.push(`<div class="poster-detail-row"><dt>강사</dt><dd>${escapeHtml(detail.teacherName)}</dd></div>`);
+
+    els.posterDetail.innerHTML = `
+      <div class="poster-detail-head">
+        <span>${escapeHtml(course.teacher)}</span>
+        <strong>${escapeHtml(detail.title || course.title)}</strong>
+      </div>
+      <dl class="poster-detail-list">${rows.join('')}</dl>`;
   }
 
   function updatePosterSelectButton() {
@@ -331,16 +485,35 @@
     if (state.submissionComplete) resetAfterSuccess();
   }
 
+  function renderSelectionControl(course, stored) {
+    if (course.sessionMode === 'multi' && course.sessions?.length) {
+      const chosen = Array.isArray(stored.sessions) ? stored.sessions : [];
+      const items = course.sessions.map(session => `
+        <label class="session-option">
+          <input type="checkbox" data-session-check="${escapeHtml(course.id)}" value="${escapeHtml(session.key)}" ${chosen.includes(session.key) ? 'checked' : ''} />
+          <span><b>${escapeHtml(session.label)} · ${escapeHtml(session.when)}</b><small>${escapeHtml(session.content)}</small></span>
+        </label>`).join('');
+      return `<div class="selected-course-detail">
+          <div class="session-select" role="group" aria-label="${escapeHtml(course.teacher)} 참여 회차 선택">
+            <p class="session-select-label">참여할 회차 선택 <em>두 회차 모두 참여 권장 · 복수 선택 가능</em></p>
+            ${items}
+          </div>
+        </div>`;
+    }
+    if (course.sessionMode === 'choose-one' && course.options?.length) {
+      return `<div class="selected-course-detail"><label>참여 시간 선택 <em>동일 내용 · 한 타임만 선택</em><span><select data-course-detail="${escapeHtml(course.id)}" aria-label="${escapeHtml(course.teacher)} 참여 시간 선택" required>
+            <option value="">참여 시간을 선택해 주세요</option>
+            ${course.options.map(option => `<option value="${escapeHtml(option)}" ${stored.detail === option ? 'selected' : ''}>${escapeHtml(option)}</option>`).join('')}
+          </select></span></label></div>`;
+    }
+    return '';
+  }
+
   function renderSelectedCourseList() {
     const courses = Array.from(state.selected.keys()).map(getCourse).filter(Boolean);
     els.selectedCourseList.innerHTML = courses.map(course => {
-      const stored = state.selected.get(course.id) || { detail: '' };
-      const optionalControl = course.options?.length
-        ? `<div class="selected-course-detail"><label>참여 시간 선택 <span><select data-course-detail="${escapeHtml(course.id)}" aria-label="${escapeHtml(course.teacher)} 참여 시간 선택" required>
-            <option value="">참여 시간을 선택해 주세요</option>
-            ${course.options.map(option => `<option value="${escapeHtml(option)}" ${stored.detail === option ? 'selected' : ''}>${escapeHtml(option)}</option>`).join('')}
-          </select></span></label></div>`
-        : '';
+      const stored = state.selected.get(course.id) || { detail: '', sessions: [] };
+      const optionalControl = renderSelectionControl(course, stored);
       return `
         <article class="selected-course-item" style="--item-accent:${escapeHtml(course.accent)}">
           <div class="selected-course-head">
@@ -358,10 +531,27 @@
     }).join('');
   }
 
+  function buildMultiDetailString(course, keys) {
+    return (course.sessions || [])
+      .filter(session => keys.includes(session.key))
+      .map(session => `${session.label}(${session.when})`)
+      .join(', ');
+  }
+
   function persistCourseDetailsFromForm() {
-    $$('[data-course-detail]', els.selectedCourseList).forEach(control => {
-      const id = control.dataset.courseDetail;
-      if (state.selected.has(id)) state.selected.set(id, { detail: control.value.trim() });
+    Array.from(state.selected.keys()).forEach(id => {
+      const course = getCourse(id);
+      if (!course) return;
+      if (course.sessionMode === 'multi') {
+        const checks = $$(`[data-session-check="${id}"]`, els.selectedCourseList);
+        if (!checks.length) return;
+        const keys = checks.filter(check => check.checked).map(check => check.value);
+        state.selected.set(id, { detail: buildMultiDetailString(course, keys), sessions: keys });
+      } else if (course.sessionMode === 'choose-one') {
+        const control = $(`[data-course-detail="${id}"]`, els.selectedCourseList);
+        if (!control) return;
+        state.selected.set(id, { detail: control.value.trim(), sessions: [] });
+      }
     });
     saveSelection();
   }
@@ -401,10 +591,20 @@
         error.textContent = '신청할 특강을 한 개 이상 선택해 주세요.';
         return false;
       }
-      const missingOption = Array.from(state.selected.keys()).map(getCourse).find(course => course?.options?.length && !String(state.selected.get(course.id)?.detail || '').trim());
+      const missingOption = Array.from(state.selected.keys()).map(getCourse).find(course => {
+        if (!course) return false;
+        if (course.sessionMode === 'multi') return !(state.selected.get(course.id)?.sessions || []).length;
+        if (course.sessionMode === 'choose-one') return !String(state.selected.get(course.id)?.detail || '').trim();
+        return false;
+      });
       if (missingOption) {
-        error.textContent = `${missingOption.teacher} 특강의 참여 시간을 선택해 주세요.`;
-        const control = $(`[data-course-detail="${missingOption.id}"]`, els.selectedCourseList);
+        const isMulti = missingOption.sessionMode === 'multi';
+        error.textContent = isMulti
+          ? `${missingOption.teacher} 특강의 참여 회차를 한 개 이상 선택해 주세요.`
+          : `${missingOption.teacher} 특강의 참여 시간을 선택해 주세요.`;
+        const control = isMulti
+          ? $(`[data-session-check="${missingOption.id}"]`, els.selectedCourseList)
+          : $(`[data-course-detail="${missingOption.id}"]`, els.selectedCourseList);
         control?.focus();
         return false;
       }
@@ -757,6 +957,15 @@
     els.posterSelect.addEventListener('click', () => {
       if (!state.posterCourseId) return;
       toggleSelection(state.posterCourseId);
+    });
+
+    els.selectedCourseList.addEventListener('change', event => {
+      if (!event.target.matches('[data-session-check], [data-course-detail]')) return;
+      state.pendingRequestId = '';
+      state.pendingReceipt = '';
+      persistCourseDetailsFromForm();
+      const error = $('#course-error');
+      if (error) error.textContent = '';
     });
 
     els.prevStep.addEventListener('click', () => goToStep(state.currentStep - 1));
