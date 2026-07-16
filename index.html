@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#101d3b" />
+  <meta name="description" content="목동유쌤영어학원 2026 초6·중등부 여름 무료특강 통합 안내 및 신청" />
+  <meta property="og:title" content="2026 중등부 여름 무료특강 통합 신청 | 목동유쌤영어학원" />
+  <meta property="og:description" content="초6~중3 대상 7개 무료특강을 한 곳에서 확인하고, 원하는 수업을 한 번에 신청하세요." />
+  <meta property="og:type" content="website" />
+  <title>2026 중등부 여름 무료특강 통합 신청 | 목동유쌤영어학원</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">본문으로 바로가기</a>
+
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="목동유쌤영어학원 여름 특강 홈">
+        <span class="brand-mark" aria-hidden="true">Y</span>
+        <span class="brand-copy">
+          <strong>목동유쌤영어학원</strong>
+          <small>YU'S ENGLISH INSTITUTE</small>
+        </span>
+      </a>
+      <nav class="desktop-nav" aria-label="주요 메뉴">
+        <a href="#courses">특강 둘러보기</a>
+        <a href="#guide">신청 안내</a>
+        <button class="nav-apply" type="button" data-open-apply>통합 신청하기</button>
+      </nav>
+      <button class="header-apply" type="button" data-open-apply>신청</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> 2026 SUMMER SPECIAL CLASS</p>
+          <h1 id="hero-title">이번 여름,<br /><em>내 약점에 맞는</em><br />수업을 정확히 고르세요.</h1>
+          <p class="hero-lead">초6~중3 대상 7개 무료특강을 한 곳에서 비교하고,<br class="desktop-only" /> 원하는 수업을 여러 개 골라 한 번에 신청할 수 있습니다. 외부생도 무료 청강이 가능합니다.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#courses">특강 확인하기</a>
+            <button class="button button-ghost" type="button" data-open-apply>바로 신청하기</button>
+          </div>
+          <div class="hero-metrics" aria-label="통합 신청 특징">
+            <div><strong>7개</strong><span>맞춤 무료특강</span></div>
+            <div><strong>무료</strong><span>외부생 청강 가능</span></div>
+            <div><strong>복수</strong><span>특강 동시 신청</span></div>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-card hero-card-back">
+            <span>SUMMER</span>
+            <strong>2026</strong>
+          </div>
+          <div class="hero-card hero-card-main">
+            <div class="hero-card-topline"><span>YU'S ENGLISH</span><span>01</span></div>
+            <div class="hero-card-type">SPECIAL<br />CLASS</div>
+            <div class="hero-card-bottom">
+              <span>COMPARE</span><i></i><span>SELECT</span><i></i><span>APPLY</span>
+            </div>
+          </div>
+          <div class="hero-sticker">한 번에<br />통합 신청</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-strip" aria-label="신청 흐름">
+      <div class="wrap intro-strip-inner">
+        <span><b>01</b> 포스터 확인</span>
+        <i aria-hidden="true"></i>
+        <span><b>02</b> 원하는 특강 선택</span>
+        <i aria-hidden="true"></i>
+        <span><b>03</b> 한 번에 신청 완료</span>
+      </div>
+    </section>
+
+    <section class="courses-section" id="courses" aria-labelledby="courses-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">SPECIAL LECTURES</p>
+            <h2 id="courses-title">선생님별 특강을 확인하세요</h2>
+            <p>포스터를 누르면 크게 볼 수 있습니다. 원하는 특강은 여러 개 선택할 수 있습니다.</p>
+          </div>
+          <div class="course-count" aria-live="polite"><strong id="visible-course-count">7</strong><span>개의 특강</span></div>
+        </div>
+
+        <div class="filter-row" role="group" aria-label="특강 보기 필터">
+          <button class="filter-chip is-active" type="button" data-filter="all">전체</button>
+          <button class="filter-chip" type="button" data-filter="selected">선택한 특강</button>
+          <button class="filter-chip" type="button" data-filter="available">신청 가능</button>
+        </div>
+
+        <div class="course-grid" id="course-grid" aria-live="polite"></div>
+
+        <div class="empty-state" id="empty-state" hidden>
+          <strong>조건에 맞는 특강이 없습니다.</strong>
+          <p>전체 보기를 눌러 다시 확인해 주세요.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-section" id="guide" aria-labelledby="guide-title">
+      <div class="wrap guide-layout">
+        <div class="guide-copy">
+          <p class="section-kicker">HOW TO APPLY</p>
+          <h2 id="guide-title">신청은 세 단계면 끝납니다</h2>
+          <p>같은 학생이 여러 특강을 신청해도 개인정보는 한 번만 입력합니다. 포스터와 일정을 확인한 뒤 필요한 수업을 한 번에 담아 주세요.</p>
+          <a class="phone-link" href="tel:0317943306"><span>교육 문의</span><strong>031-794-3306</strong></a>
+        </div>
+        <ol class="guide-steps">
+          <li><span>01</span><div><strong>특강 내용 확인</strong><p>수업 대상·핵심 내용·정확한 일정을 포스터에서 확인합니다.</p></div></li>
+          <li><span>02</span><div><strong>원하는 특강 복수 선택</strong><p>카드의 ‘선택하기’를 눌러 신청 목록에 담습니다.</p></div></li>
+          <li><span>03</span><div><strong>학생 정보 한 번만 입력</strong><p>통합 신청서를 제출하면 학원에서 순차적으로 확인 연락을 드립니다.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="final-cta" aria-labelledby="final-title">
+      <div class="wrap final-cta-inner">
+        <div>
+          <p class="section-kicker">READY TO START?</p>
+          <h2 id="final-title">올여름 필요한 수업을<br />지금 한 번에 선택하세요.</h2>
+          <p>모든 특강은 무료이며 외부생도 신청할 수 있습니다. 좌석 및 최종 참여 여부는 확인 연락 후 확정됩니다.</p>
+        </div>
+        <button class="button button-light" type="button" data-open-apply>통합 신청서 작성하기</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <span class="brand-mark" aria-hidden="true">Y</span>
+        <div><strong>목동유쌤영어학원</strong><small>YU'S ENGLISH INSTITUTE</small></div>
+      </div>
+      <div class="footer-info">
+        <p><b>교육 문의</b> <a href="tel:0317943306">031-794-3306</a></p>
+        <p>하남 미사 초등 고학년·중·고등 영어 전문 · ㈜유쌤에듀</p>
+        <p class="copyright">© 2026 YU'S ENGLISH INSTITUTE. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <aside class="selection-bar" id="selection-bar" aria-live="polite" aria-label="선택한 특강">
+    <div class="selection-bar-inner">
+      <div class="selection-summary">
+        <span class="selection-badge" id="selection-count">0</span>
+        <div><strong id="selection-title">특강을 선택해 주세요</strong><small id="selection-names">여러 특강을 한 번에 신청할 수 있습니다.</small></div>
+      </div>
+      <button type="button" id="selection-apply" data-open-apply disabled>선택한 특강 신청</button>
+    </div>
+  </aside>
+
+  <div class="modal" id="poster-modal" role="dialog" aria-modal="true" aria-labelledby="poster-modal-title" hidden>
+    <div class="modal-backdrop" data-close-poster></div>
+    <div class="poster-dialog">
+      <div class="modal-head">
+        <div><span>POSTER DETAIL</span><h2 id="poster-modal-title">특강 포스터</h2></div>
+        <button class="icon-button" type="button" data-close-poster aria-label="닫기">×</button>
+      </div>
+      <div class="poster-viewer">
+        <img id="poster-modal-image" src="" alt="" />
+      </div>
+      <div class="poster-actions">
+        <a id="poster-source-link" class="text-link" href="#" target="_blank" rel="noopener" hidden>기존 개별 신청서 확인 ↗</a>
+        <button id="poster-select-button" class="button button-primary" type="button">이 특강 선택하기</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal apply-modal" id="apply-modal" role="dialog" aria-modal="true" aria-labelledby="apply-modal-title" hidden>
+    <div class="modal-backdrop" data-close-apply></div>
+    <div class="apply-dialog">
+      <div class="apply-topbar">
+        <div class="apply-brand"><span class="brand-mark" aria-hidden="true">Y</span><div><strong>2026 여름 무료특강</strong><small>통합 신청서</small></div></div>
+        <button class="icon-button" type="button" data-close-apply aria-label="신청서 닫기">×</button>
+      </div>
+
+      <div class="progress-wrap" aria-label="신청 진행 단계">
+        <div class="progress-track"><span id="progress-fill"></span></div>
+        <ol class="progress-steps">
+          <li class="is-active" data-progress-step="1"><b>1</b><span>특강 선택</span></li>
+          <li data-progress-step="2"><b>2</b><span>학생 정보</span></li>
+          <li data-progress-step="3"><b>3</b><span>보호자·동의</span></li>
+          <li data-progress-step="4"><b>4</b><span>최종 확인</span></li>
+        </ol>
+      </div>
+
+      <form id="application-form" novalidate>
+        <section class="form-step is-active" data-form-step="1" aria-labelledby="step-one-title">
+          <div class="form-heading"><span>STEP 01</span><h2 id="apply-modal-title"><span id="step-one-title">신청할 특강을 확인해 주세요</span></h2><p>선택한 수업의 대상과 일정을 확인해 주세요. 시간이 두 개인 특강은 참여 시간을 선택합니다.</p></div>
+          <div class="selected-course-list" id="selected-course-list"></div>
+          <button class="add-course-button" type="button" data-close-apply data-scroll-courses>+ 다른 특강 더 선택하기</button>
+          <div class="step-error" id="course-error" role="alert"></div>
+        </section>
+
+        <section class="form-step" data-form-step="2" aria-labelledby="step-two-title">
+          <div class="form-heading"><span>STEP 02</span><h2 id="step-two-title">학생 정보를 입력해 주세요</h2><p>정확한 반 배치와 상담을 위해 실제 재학 정보를 적어 주세요.</p></div>
+          <div class="field-grid">
+            <label class="field"><span>학생 이름 <i>*</i></span><input id="student-name" name="studentName" type="text" maxlength="30" autocomplete="name" placeholder="예) 홍길동" required /></label>
+            <label class="field"><span>학교 <i>*</i></span><input id="school" name="school" type="text" maxlength="40" placeholder="예) 미사중학교" required /></label>
+            <label class="field"><span>학년 <i>*</i></span><select id="grade" name="grade" required><option value="">선택해 주세요</option><option>초6</option><option>중1</option><option>중2</option><option>중3</option><option>기타</option></select></label>
+            <fieldset class="field radio-field"><legend>학생 구분 <i>*</i></legend><div class="radio-group"><label><input type="radio" name="enrollmentStatus" value="재원생" required /><span>재원생</span></label><label><input type="radio" name="enrollmentStatus" value="외부생" /><span>외부생</span></label></div></fieldset>
+            <label class="field field-full"><span>학생 연락처 <em>선택</em></span><input id="student-phone" name="studentPhone" type="tel" inputmode="numeric" maxlength="13" autocomplete="tel" placeholder="010-0000-0000" /></label>
+          </div>
+          <div class="step-error" id="student-error" role="alert"></div>
+        </section>
+
+        <section class="form-step" data-form-step="3" aria-labelledby="step-three-title">
+          <div class="form-heading"><span>STEP 03</span><h2 id="step-three-title">보호자 연락처와 동의를 확인해 주세요</h2><p>접수 확인 및 수강 상담을 위해 보호자 연락처가 필요합니다.</p></div>
+          <div class="field-grid">
+            <label class="field"><span>보호자 성함 <i>*</i></span><input id="guardian-name" name="guardianName" type="text" maxlength="30" autocomplete="name" placeholder="예) 홍길동 보호자" required /></label>
+            <label class="field"><span>보호자 연락처 <i>*</i></span><input id="guardian-phone" name="guardianPhone" type="tel" inputmode="numeric" maxlength="13" autocomplete="tel" placeholder="010-0000-0000" required /></label>
+            <label class="field field-full"><span>상담 시 참고사항 <em>선택</em></span><textarea id="memo" name="memo" maxlength="800" rows="4" placeholder="학생의 현재 수준, 희망 수업, 일정 관련 문의 등을 적어 주세요."></textarea><small class="char-count"><b id="memo-count">0</b>/800</small></label>
+          </div>
+          <div class="privacy-box">
+            <strong>개인정보 수집·이용 안내</strong>
+            <p>수집 항목: 학생 이름·학교·학년·연락처, 보호자 성함·연락처, 신청 특강 및 상담 내용<br />이용 목적: 무료특강 접수 확인, 참여 시간 확인, 수강 상담 및 안내<br />보유 기간: 상담·운영 목적 달성 후 관련 법령 및 학원 내부 보관 기준에 따라 안전하게 관리·파기</p>
+            <label class="consent-check"><input id="privacy-consent" name="privacyConsent" type="checkbox" required /><span><b>필수</b> 개인정보 수집·이용에 동의합니다.</span></label>
+          </div>
+          <label class="honeypot" aria-hidden="true">내용<input id="website-field" name="website" type="text" tabindex="-1" autocomplete="off" /></label>
+          <div class="step-error" id="guardian-error" role="alert"></div>
+        </section>
+
+        <section class="form-step" data-form-step="4" aria-labelledby="step-four-title">
+          <div class="form-heading"><span>STEP 04</span><h2 id="step-four-title">입력한 내용을 마지막으로 확인해 주세요</h2><p>제출 후 학원에서 신청 내용을 확인하고 순차적으로 연락드립니다.</p></div>
+          <div class="review-card" id="review-card"></div>
+          <label class="final-confirm"><input id="final-confirm" type="checkbox" /><span>위 신청 내용을 확인했으며, 정확하게 입력했습니다.</span></label>
+          <div class="step-error" id="review-error" role="alert"></div>
+        </section>
+
+        <section class="success-step" id="success-step" hidden aria-live="polite">
+          <div class="success-icon" aria-hidden="true"><span>✓</span></div>
+          <p class="section-kicker">APPLICATION COMPLETE</p>
+          <h2>특강 신청이 접수되었습니다.</h2>
+          <p>확인 후 학원에서 순차적으로 연락드리겠습니다.<br />좌석 및 최종 참여 가능 여부는 확인 연락 후 확정됩니다.</p>
+          <div class="receipt-box"><span>접수번호</span><strong id="receipt-number">-</strong></div>
+          <div class="success-actions"><button class="button button-primary" type="button" id="success-close">확인</button><a class="button button-outline" href="tel:0317943306">전화 문의</a></div>
+        </section>
+
+        <div class="form-footer" id="form-footer">
+          <button class="button button-outline" id="prev-step" type="button" hidden>이전</button>
+          <button class="button button-primary" id="next-step" type="button">다음 단계</button>
+          <button class="button button-primary submit-button" id="submit-application" type="submit" hidden><span>신청서 제출하기</span><i class="spinner" aria-hidden="true"></i></button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "2026 여름특강 통합 신청",
+  "short_name": "여름특강 신청",
+  "lang": "ko-KR",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f3ec",
+  "theme_color": "#101d3b",
+  "icons": []
+}
