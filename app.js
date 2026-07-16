@@ -9,20 +9,20 @@
     {
       id: 'park-chaeyoung', sort: 1, active: true, teacher: '박채영T',
       title: '고1 첫 시험 미리 보기', target: '중3(예비고1)',
-      schedule: '8/5 13:00–14:30 · 8/12 20:00–21:30', price: '무료', status: '신청가능',
+      schedule: '8/5 13:00–14:30 · 8/12 13:00–14:30', price: '무료', status: '신청가능',
       accent: '#8b341f', posterUrl: 'assets/posters/park-chaeyoung.webp',
       sourceFormUrl: 'https://forms.gle/YrHtaTyxc9ZoznDGA',
       description: '하남·미강·풍산·미사고 기출을 분석하며 고1 시험을 미리 경험하는 고등 맛보기 특강입니다.',
       sessionMode: 'multi',
       sessions: [
         { key: 'r1', label: '1회차', when: '8월 5일(수) 오후 1:00~2:30', content: '어법 시험 분석' },
-        { key: 'r2', label: '2회차', when: '8월 12일(수) 오후 8:00~9:30', content: '독해 시험 분석' }
+        { key: 'r2', label: '2회차', when: '8월 12일(수) 오후 1:00~2:30', content: '독해 시험 분석' }
       ],
       options: [],
       detail: {
         title: '박채영T 고등 맛보기 특강',
         note: '1회차와 2회차는 상이한 내용으로, 두 회차 모두 참여 권장',
-        scheduleLines: ['1회차 : 8월 5일(수) 오후 1:00~2:30', '2회차 : 8월 12일(수) 오후 8:00~9:30'],
+        scheduleLines: ['1회차 : 8월 5일(수) 오후 1:00~2:30', '2회차 : 8월 12일(수) 오후 1:00~2:30'],
         contentLines: ['1회차 : 어법 시험 분석', '2회차 : 독해 시험 분석'],
         target: '하남고·미강고·풍산고·미사고 진학 예정인 중3 (비재원생도 가능)',
         location: '목동유쌤영어학원 (세부 장소 추후 공지)',
