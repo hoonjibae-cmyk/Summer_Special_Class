@@ -4,6 +4,9 @@
   const APP_CONFIG = window.YUSSAM_SUMMER_CONFIG || {};
   const STORAGE_KEY = 'yussam_summer_2026_selection_v1';
   const PLACEHOLDER_SCRIPT_URL = 'PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
+  // 폐강된 특강 ID. 원격 설정(구글시트)에 남아 있어도 화면·신청서에서 완전히 제외합니다.
+  const REMOVED_COURSE_IDS = ['sun-jaehyun'];
+  const isRemovedCourse = course => REMOVED_COURSE_IDS.includes(String(course && course.id));
 
   const DEFAULT_COURSES = [
     {
@@ -52,32 +55,6 @@
         target: '중2, 중3 (비재원생도 가능)',
         location: '목동유쌤영어학원 (세부 장소 추후 공지)',
         teacherName: '김지연 선생님'
-      }
-    },
-    {
-      id: 'sun-jaehyun', sort: 3, active: true, teacher: '선재현T',
-      title: '끊어 읽으면 해석이 된다', target: '중2',
-      schedule: '8/3 20:00–21:30 · 8/10 20:00–21:30', price: '무료', status: '신청가능',
-      accent: '#3b3aa3', posterUrl: 'assets/posters/sun-jaehyun.webp',
-      sourceFormUrl: 'https://forms.gle/xk5WHGXeRJHN1HDA8',
-      description: '문장이 길어질수록 막히는 학생을 위해 문장 구조를 끊어 보고 정확히 해석하는 힘을 기릅니다.',
-      sessionMode: 'multi',
-      sessions: [
-        { key: 'r1', label: '1회차', when: '8월 3일(월) 오후 8:00~9:30', content: '관계사 구문 끊기, 문장의 생김새, 실제 예문 적용' },
-        { key: 'r2', label: '2회차', when: '8월 10일(월) 오후 8:00~9:30', content: '분사 & to부정사 구문 끊기, 문장의 생김새, 실제 예문 적용' }
-      ],
-      options: [],
-      detail: {
-        title: '선재현T 중2 구문 특강',
-        note: '1회차와 2회차는 상이한 내용으로, 두 회차 모두 참여 권장',
-        scheduleLines: ['1회차 : 8월 3일(월) 오후 8:00~9:30', '2회차 : 8월 10일(월) 오후 8:00~9:30'],
-        contentLines: [
-          '1회차 : 관계사 구문 끊기, 문장의 생김새, 실제 예문 적용',
-          '2회차 : 분사 & to부정사 구문 끊기, 문장의 생김새, 실제 예문 적용'
-        ],
-        target: '중2 (비재원생도 가능)',
-        location: '목동유쌤영어학원 (세부 장소 추후 공지)',
-        teacherName: '선재현 선생님'
       }
     },
     {
@@ -184,7 +161,7 @@
   ];
 
   const state = {
-    courses: DEFAULT_COURSES.map(course => ({ ...course })),
+    courses: DEFAULT_COURSES.filter(course => !isRemovedCourse(course)).map(course => ({ ...course })),
     selected: new Map(),
     filter: 'all',
     currentStep: 1,
@@ -911,7 +888,7 @@
       const data = await jsonpRequest(endpoint, { action: 'config', _: Date.now() }, 7500);
       if (!Array.isArray(data?.courses) || !data.courses.length) return;
       const previous = new Map(state.selected);
-      state.courses = data.courses.map(normalizeRemoteCourse).sort((a,b) => a.sort - b.sort);
+      state.courses = data.courses.map(normalizeRemoteCourse).filter(course => !isRemovedCourse(course)).sort((a,b) => a.sort - b.sort);
       state.selected.clear();
       previous.forEach((value, id) => { if (getCourse(id) && isCourseOpen(getCourse(id))) state.selected.set(id, value); });
       updateSelectionUI();

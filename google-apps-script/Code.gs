@@ -52,7 +52,6 @@ const SETTINGS_HEADERS = Object.freeze(['설정항목', '설정값', '설명']);
 const DEFAULT_COURSES = Object.freeze([
   [1, '사용', 'park-chaeyoung', '박채영T', '고1 첫 시험 미리 보기', '중3(예비고1)', '8/5 13:00–14:30 · 8/12 13:00–14:30', '무료', '', '신청가능', '#8b341f', 'assets/posters/park-chaeyoung.webp', 'https://forms.gle/YrHtaTyxc9ZoznDGA', '하남·미강·풍산·미사고 기출을 분석하며 고1 시험을 미리 경험하는 고등 맛보기 특강입니다.', ''],
   [2, '사용', 'kim-jiyeon', '김지연T', '모의고사 어법, 안 틀리는 비법!', '중2~중3', '8/7 14:00–15:30 또는 20:00–21:30', '무료', '', '신청가능', '#6d481c', 'assets/posters/kim-jiyeon.webp', 'https://forms.gle/ZpM8BF1fLcrHm6GX6', '개념은 알지만 문제에서 흔들리는 학생을 위해 고등 모의고사 어법의 출제 원리와 풀이 기준을 정리합니다.', '8/7 14:00–15:30|8/7 20:00–21:30'],
-  [3, '사용', 'sun-jaehyun', '선재현T', '끊어 읽으면 해석이 된다', '중2', '8/3 20:00–21:30 · 8/10 20:00–21:30', '무료', '', '신청가능', '#3b3aa3', 'assets/posters/sun-jaehyun.webp', 'https://forms.gle/xk5WHGXeRJHN1HDA8', '문장이 길어질수록 막히는 학생을 위해 문장 구조를 끊어 보고 정확히 해석하는 힘을 기릅니다.', ''],
   [4, '사용', 'lee-seoyoung', '이서영T', '품사가 보이면 문장이 보인다', '초6~중2 기초', '8/5 20:00–21:30', '무료', '', '신청가능', '#06625f', 'assets/posters/lee-seoyoung.webp', 'https://forms.gle/aSSAyu2JmADHRJx56', '모든 문법의 출발점인 품사를 정확히 구분하고 문장 안에서 기능을 읽어 내는 생기초 문법 특강입니다.', ''],
   [5, '사용', 'hong-kyungji', '홍경지T', '처음 보는 단어도 한 번에 읽기', '중1~중3', '7/24 18:00–19:30 · 8/7 18:00–19:30', '무료', '', '신청가능', '#5a205d', 'assets/posters/hong-kyungji.webp', 'https://forms.gle/ePSG5yBjnFo3xAZAA', '단어를 무작정 외우는 대신 철자와 구조를 읽어 처음 보는 어휘도 스스로 해독하는 힘을 기릅니다.', ''],
   [6, '사용', 'bae-seunghee', '배승희T', '중등, 문법을 먼저 잡다', '초6', '8/4 13:30–15:00 · 8/6 13:30–15:00', '무료', '', '신청가능', '#8b1d4b', 'assets/posters/bae-seunghee.webp', 'https://forms.gle/v9EDdoBHyJQ6vm7bA', '심화·상위 과정에 필요한 핵심 문법 두 영역을 먼저 완성해 중등 영어의 기반을 단단히 잡습니다.', ''],
@@ -502,7 +501,7 @@ function resetCourseSettingsToDefaults() {
   sheet.getRange(2, 1, DEFAULT_COURSES.length, COURSE_HEADERS.length).setValues(DEFAULT_COURSES);
   formatCourseSheet_(sheet);
   SpreadsheetApp.flush();
-  SpreadsheetApp.getUi().alert('특강 기본값 복원 완료', '7개 무료특강 정보가 첨부 포스터 기준으로 다시 입력되었습니다.', SpreadsheetApp.getUi().ButtonSet.OK);
+  SpreadsheetApp.getUi().alert('특강 기본값 복원 완료', '6개 무료특강 정보가 첨부 포스터 기준으로 다시 입력되었습니다.', SpreadsheetApp.getUi().ButtonSet.OK);
 }
 
 function seedCourses_(sheet) {
