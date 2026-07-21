@@ -98,6 +98,7 @@ yussam-summer-special-integrated/
 │     └─ lee-seunghee.webp
 └─ google-apps-script/
    ├─ Code.gs
+   ├─ TomoSlackNotifier.gs   # 토모 일정 슬랙 자동 알림 (9번 항목)
    └─ appsscript.json
 ```
 
@@ -235,6 +236,62 @@ npx.cmd vercel --prod
 기존 개별 Google Form 주소는 특강 출처 확인을 위해 코드와 특강설정 시트에 보관되어 있습니다. 실제 신청은 새 통합 신청서로 받으므로 학부모 화면에는 기존 폼 링크를 노출하지 않았습니다.
 
 운영 시작 후에는 문자·카카오톡 안내에 개별 폼 대신 **Vercel 통합 페이지 주소 하나만** 전달하면 됩니다.
+
+---
+
+# 9. 토모 일정 슬랙 자동 알림
+
+구글 캘린더에 **제목이 `토모-xxx` 형식**인 일정이 잡혀 있는 날, **당일 오전 10시경** 지정한 슬랙 채널로 아래 문구를 자동 발송하는 기능입니다. (오늘 토모 일정이 없으면 아무 것도 보내지 않습니다.)
+
+```text
+[토모 관리 유의 사항]
+아래 예시에 해당하는 경우, 이 글에 댓글 달아서 보고하세요.
+
+• 토모 시작 후 듣기를 5분이 지나서 튼 경우
+• 스피커 연결이 안 되어서 딜레이 된 경우
+• 중간에 학생이 퇴실한 경우
+• 시작 시간 이후에 학생이 입실한 경우
+• 한 번호로 찍고 자는 학생 등등..
+```
+
+코드는 `google-apps-script/TomoSlackNotifier.gs`에 있으며, 기존 신청서 Apps Script와 **같은 프로젝트에 함께 넣으면** 됩니다. 캘린더 iCal 주소·슬랙 토큰 같은 비밀값은 저장소에 커밋하지 않고 Apps Script의 **Script Properties**에 저장합니다.
+
+## 9-1. 슬랙 채널 준비 (둘 중 하나)
+
+- **(권장) Incoming Webhook** — 슬랙 워크스페이스에서 알림을 받을 채널용 Webhook URL을 발급받습니다. 채널이 Webhook에 고정됩니다.
+  `https://api.slack.com/messaging/webhooks` 참고. 형식: `https://hooks.slack.com/services/...`
+- **Bot Token** — `chat:write` 권한이 있는 봇 토큰(`xoxb-...`)을 발급받고, 알림 채널에 봇을 초대한 뒤 채널명(`#채널명`) 또는 채널 ID를 사용합니다.
+
+## 9-2. 설치 (최초 1회)
+
+1. Apps Script 편집기에서 **파일 추가 → 스크립트**로 `TomoSlackNotifier.gs`를 만들고 이 파일 내용을 붙여넣습니다.
+2. `setupTomoNotifier()` 함수 안의 `config`에 값을 채웁니다.
+   - `icalUrl`: 구글 캘린더 iCal 비공개 주소(`...basic.ics`)
+   - `slackWebhookUrl`: Incoming Webhook URL (Bot Token을 쓰면 비워 두고 아래 두 값 입력)
+   - `slackBotToken` / `slackChannel`: Bot Token 방식일 때만 입력
+3. 함수 선택 메뉴에서 `setupTomoNotifier`를 선택하고 **실행**합니다.
+   - 값이 Script Properties에 저장되고, **매일 오전 10시 트리거**가 자동 설치됩니다.
+   - 처음 실행 시 캘린더 조회(UrlFetch)·트리거 권한을 승인합니다.
+4. 저장이 끝나면 코드에 적어둔 `config` 값은 지워도 됩니다. **저장소에는 커밋하지 마세요.**
+5. `testTomoDailyReminder`를 실행해 오늘 토모 일정이 있을 때 슬랙으로 실제 발송되는지 확인합니다.
+
+## 9-3. 확인·운영 함수
+
+| 함수 | 용도 |
+|---|---|
+| `setupTomoNotifier` | iCal·슬랙 정보 저장 + 매일 오전 10시 트리거 설치 |
+| `sendTomoDailyReminder` | 트리거가 매일 호출(수동 실행도 가능) |
+| `testTomoDailyReminder` | 지금 실행해 실제 발송 테스트 |
+| `previewTomoToday` | 오늘 감지되는 토모 일정만 로그로 확인(발송 안 함) |
+| `showTomoStatus` | 저장된 설정·트리거 상태 확인(민감정보 마스킹) |
+| `disableTomoNotifier` | 알림 트리거 제거(저장값은 유지) |
+
+## 9-4. 참고 사항
+
+- 시간대는 `Asia/Seoul` 기준입니다. 종일 일정·시간 지정 일정 모두 지원합니다.
+- 매주/매일 반복 일정(RRULE)과 예외 날짜(EXDATE), 개별 수정 일정(RECURRENCE-ID)을 반영해 "오늘 실제 발생하는" 토모 일정만 감지합니다.
+- Apps Script 시간 트리거는 지정 시각의 1시간 이내(예: 10:00~11:00)에 실행됩니다.
+- 제목 매칭은 `토모-`로 시작하는 일정입니다(하이픈 `-`·`–`·`—` 및 앞뒤 공백 허용).
 
 ---
 
